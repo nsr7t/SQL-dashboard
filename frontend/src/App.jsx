@@ -1,10 +1,12 @@
 import { BrowserRouter } from "react-router"
-import Sidebar from "./components/layout/Sidebar"
+import Layout from "./components/layout/Layout"
 
 function App() {
     return (
         <BrowserRouter>
-            <Sidebar />
+            <div className="flex">
+                <Layout />
+            </div>
         </BrowserRouter>
     )
 }
