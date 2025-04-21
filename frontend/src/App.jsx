@@ -5,7 +5,7 @@ function App() {
     return (
         <BrowserRouter>
             <div className="flex">
-                <Layout />
+                <Layout>Some Context</Layout>
             </div>
         </BrowserRouter>
     )
