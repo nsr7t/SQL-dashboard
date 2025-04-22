@@ -1,11 +1,14 @@
 import { BrowserRouter } from "react-router"
 import Layout from "./components/layout/Layout"
+import Dashboard from "./pages/Dashboard"
 
 function App() {
     return (
         <BrowserRouter>
             <div className="flex">
-                <Layout>Some Context</Layout>
+                <Layout>
+                    <Dashboard />
+                </Layout>
             </div>
         </BrowserRouter>
     )
