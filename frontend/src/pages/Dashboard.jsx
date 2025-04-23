@@ -1,92 +1,10 @@
 import DashboardCard from "../components/ui/DashboardCard"
-import { Bar } from "react-chartjs-2"
-import {
-    Chart as ChartJs,
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend,
-} from "chart.js"
 import { useState } from "react"
 import LineGraph from "../components/ui/LineGraph"
-
-ChartJs.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
+import QueryChart from "../components/ui/QueryChart"
 
 function Dashboard() {
     const [timeFrame, setTimeFrame] = useState("7")
-    function getData() {
-        switch (timeFrame) {
-            case "7":
-                return {
-                    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-                    datasets: [
-                        {
-                            label: "Total Queries",
-                            data: [40, 50, 75, 30, 95, 32, 45],
-                            backgroundColor: "rgba(75,192,192,0.6)",
-                        },
-                    ],
-                }
-            case "30":
-                return {
-                    labels: Array.from({ length: 30 }, (_, i) => {
-                        const date = new Date()
-                        date.setDate(date.getDate() - (29 - i))
-                        return date.toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                        })
-                    }),
-                    datasets: [
-                        {
-                            label: "Total Queries",
-                            data: Array.from({ length: 30 }, () =>
-                                Math.floor(Math.random() * 4000),
-                            ),
-                            backgroundColor: "rgba(75,192,192,0.6)",
-                        },
-                    ],
-                }
-
-            case "90":
-                return {
-                    labels: Array.from({ length: 90 }, (_, i) => {
-                        {
-                            const date = new Date()
-                            date.setDate(date.getDate() - (29 - i))
-                            return date.toLocaleDateString("en-US", {
-                                month: "short",
-                                day: "numeric",
-                            })
-                        }
-                    }),
-                    datasets: [
-                        {
-                            label: "Total Queries",
-                            data: Array.from({ length: 90 }, () =>
-                                Math.floor(Math.random() * 4000),
-                            ),
-                            backgroundColor: "rgba(75,192,192,0.6)",
-                        },
-                    ],
-                }
-            default:
-                return {}
-        }
-    }
-
-    const chartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-
-        plugins: {
-            legend: { position: "top" },
-            title: { display: true, text: "Query Activity" },
-        },
-    }
-
     return (
         <div className="space-y-6 p-6">
             <div>
@@ -118,7 +36,7 @@ function Dashboard() {
                     </div>
 
                     <div className="h-80 w-full sm:h-96">
-                        <Bar data={getData()} options={chartOptions} />
+                        <QueryChart timeFrame={timeFrame} />
                     </div>
                 </div>
                 <div className="rounded-lg bg-white p-6 shadow">
