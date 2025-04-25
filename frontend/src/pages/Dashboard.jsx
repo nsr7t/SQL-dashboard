@@ -2,9 +2,11 @@ import DashboardCard from "../components/ui/DashboardCard"
 import { useState } from "react"
 import LineGraph from "../components/ui/LineGraph"
 import QueryChart from "../components/ui/QueryChart"
+import QueryFilters from "../components/ui/QueryFilters"
 
 function Dashboard() {
     const [timeFrame, setTimeFrame] = useState("7")
+    const [dateRange, setDateRange] = useState("last7days")
     return (
         <div className="space-y-6 p-6">
             <div>
@@ -66,6 +68,17 @@ function Dashboard() {
                         />
                     </div>
                 </div>
+            </div>
+            <div className="rounded-lg bg-white shadow">
+                <div className="border-b border-gray-200 p-6">
+                    <h2 className="text-lg font-semibold text-gray-800">
+                        Recent Queries
+                    </h2>
+                </div>
+                <QueryFilters
+                    dateRange={dateRange}
+                    setDateRange={setDateRange}
+                />
             </div>
         </div>
     )
