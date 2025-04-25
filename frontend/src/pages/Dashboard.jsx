@@ -3,6 +3,7 @@ import { useState } from "react"
 import LineGraph from "../components/ui/LineGraph"
 import QueryChart from "../components/ui/QueryChart"
 import QueryFilters from "../components/ui/QueryFilters"
+import QueryTable from "../components/ui/QueryTable"
 
 function Dashboard() {
     const [timeFrame, setTimeFrame] = useState("7")
@@ -79,6 +80,7 @@ function Dashboard() {
                     dateRange={dateRange}
                     setDateRange={setDateRange}
                 />
+                <QueryTable />
             </div>
         </div>
     )

@@ -51,7 +51,7 @@ function QueryFilters({ dateRange, setDateRange }) {
                         </select>
                     </div>
                     <div className="md:self-end">
-                        <Button>
+                        <Button variant="outline">
                             <FilterIcon size={16} className="mr-1" />
                             MoreFilters
                         </Button>
@@ -62,11 +62,11 @@ function QueryFilters({ dateRange, setDateRange }) {
                         <RefreshCwIcon size={16} className="mr-1" />
                         Run Query
                     </Button>
-                    <Button>
+                    <Button variant="outline">
                         <DownloadIcon size={16} className="mr-1" />
                         Export CSV
                     </Button>
-                    <Button>
+                    <Button variant="outline">
                         <SaveIcon size={16} className="mr-1" />
                         Save Report
                     </Button>
