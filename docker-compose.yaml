@@ -1,0 +1,8 @@
+version: "3"
+services:
+  frontend-react:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
