@@ -18,6 +18,10 @@ function App() {
                             path="/"
                             element={<Navigate to="/dashboard" />}
                         />
+                        <Route
+                            path="/overview"
+                            element={<Navigate to="/dashboard" />}
+                        />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/queries" element={<QueriesPage />} />
                         <Route path="/users" element={<UserPage />} />

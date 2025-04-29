@@ -4,6 +4,7 @@ import LineGraph from "../components/ui/LineGraph"
 import QueryChart from "../components/ui/QueryChart"
 import QueryFilters from "../components/ui/QueryFilters"
 import QueryTable from "../components/ui/QueryTable"
+import Pagination from "../components/ui/Pagination"
 
 function Dashboard() {
     const [timeFrame, setTimeFrame] = useState("7")
@@ -81,6 +82,7 @@ function Dashboard() {
                     setDateRange={setDateRange}
                 />
                 <QueryTable />
+                <Pagination />
             </div>
         </div>
     )
