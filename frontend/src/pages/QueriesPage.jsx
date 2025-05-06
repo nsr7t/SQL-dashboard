@@ -1,6 +1,18 @@
 import DataTable from "../components/ui/DataTable"
+import { useState } from "react"
+import InsertForm from "../components/ui/InsertForm"
 
 function QueriesPage() {
+    const columns = ["id", "username", "email", "role", "created_at"]
+
+    const [isCreateModelOpen, setIsCreateModelOpen] = useState(false)
+    function openCreateModel() {
+        setIsCreateModelOpen((value) => !value)
+    }
+    function handleClose() {
+        setIsCreateModelOpen((value) => !value)
+    }
+
     return (
         <div className="space-y-6">
             <div className="flex items-center justify-between">
@@ -21,11 +33,21 @@ function QueriesPage() {
                         <option value="">customers</option>
                     </select>
                 </div>
-                <button className="rounded-md bg-blue-600 px-6 py-2 text-white hover:bg-blue-700 disabled:bg-blue-300">
+                <button
+                    onClick={openCreateModel}
+                    className="rounded-md bg-blue-600 px-6 py-2 text-white hover:bg-blue-700 disabled:bg-blue-300"
+                >
                     Create New Record
                 </button>
             </div>
-            <DataTable />
+            <DataTable columns={columns} />
+            {isCreateModelOpen && (
+                <InsertForm
+                    title={"Add a Form"}
+                    columns={columns}
+                    onClose={handleClose}
+                />
+            )}
         </div>
     )
 }

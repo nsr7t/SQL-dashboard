@@ -1,6 +1,4 @@
-function DataTable() {
-    const columns = ["id", "username", "email", "role", "created_at", "action"]
-
+function DataTable({ columns }) {
     if (false) {
         return (
             <div className="overflow-hidden bg-white py-10 text-center shadow sm:rounded-lg">
@@ -25,6 +23,9 @@ function DataTable() {
                                             {column}
                                         </th>
                                     ))}
+                                    <th className="px-6 py-3 text-left text-sm font-medium tracking-wide text-gray-500 uppercase">
+                                        Action
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 bg-white">
