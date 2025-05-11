@@ -10,9 +10,9 @@ function DataTable({ columns }) {
         <div className="flex flex-col">
             <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-                    <div className="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <thead className="bg-gray-50">
+                    <div className="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg dark:border-gray-500">
+                        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-500">
+                            <thead className="bg-gray-50 dark:bg-gray-900">
                                 <tr>
                                     {columns.map((column, index) => (
                                         <th
@@ -28,8 +28,8 @@ function DataTable({ columns }) {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-200 bg-white">
-                                <tr className="hover:bg-gray-100">
+                            <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-500 dark:bg-gray-900">
+                                <tr className="hover:bg-gray-100 dark:hover:bg-gray-800">
                                     <td className="table-data-2">1</td>
                                     <td className="table-data-2">Jhon</td>
                                     <td className="table-data-2">
@@ -47,7 +47,7 @@ function DataTable({ columns }) {
                                         </button>
                                     </td>
                                 </tr>
-                                <tr className="hover:bg-gray-100">
+                                <tr className="hover:bg-gray-100 dark:hover:bg-gray-800">
                                     <td className="table-data-2">2</td>
                                     <td className="table-data-2">Tom</td>
                                     <td className="table-data-2">

@@ -24,9 +24,9 @@ function App() {
                         />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/queries" element={<QueriesPage />} />
-                        <Route path="/users" element={<UserPage />} />
                         <Route path="/reports" element={<ReportsPage />} />
                         <Route path="/analytics" element={<AnalyticsPage />} />
+                        <Route path="/users" element={<UserPage />} />
                         <Route path="/settings" element={<SettingsPage />} />
                     </Routes>
                 </Layout>

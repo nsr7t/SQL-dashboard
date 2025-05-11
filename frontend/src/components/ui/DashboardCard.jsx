@@ -44,9 +44,14 @@ function DashboardCard() {
     return (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {cardData.map((item, index) => (
-                <div className="rounded-lg bg-white p-6 shadow" key={index}>
+                <div
+                    className="rounded-lg bg-white p-6 shadow dark:bg-gray-900"
+                    key={index}
+                >
                     <div className="item-center flex">
-                        <div className={`rounded-lg p-3 ${item.bgColor}`}>
+                        <div
+                            className={`rounded-lg p-3 ${item.bgColor} dark:bg-gray-800`}
+                        >
                             {item.icon}
                         </div>
                         <div className="ml-4">
@@ -54,7 +59,7 @@ function DashboardCard() {
                                 {item.title}
                             </h3>
                             <div className="flex items-baseline">
-                                <p className="text-2xl font-semibold text-gray-900">
+                                <p className="text-2xl font-semibold text-gray-900 dark:text-white">
                                     {item.value}
                                 </p>
                                 <p

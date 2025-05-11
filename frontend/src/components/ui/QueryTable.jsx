@@ -54,7 +54,7 @@ function QueryTable() {
         <div className="overflow-x-auto">
             <table className="min-w-full">
                 <thead>
-                    <tr className="bg-gray-50 text-left text-sm font-medium tracking-wide text-gray-500 uppercase">
+                    <tr className="bg-gray-50 text-left text-sm font-medium tracking-wide text-gray-500 uppercase dark:bg-gray-900">
                         <th className="table-header">Query ID</th>
                         <th className="table-header">Query</th>
                         <th className="table-header">Database</th>

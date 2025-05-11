@@ -15,7 +15,7 @@ function QueryFilters({ dateRange, setDateRange }) {
                     <div className="flex items-center justify-start gap-2 md:block md:gap-0">
                         <label
                             htmlFor="dateRange"
-                            className="mb-1 block text-sm font-medium text-gray-700"
+                            className="mb-1 block text-sm font-medium text-gray-700 dark:text-white"
                         >
                             Date Range
                         </label>
@@ -23,7 +23,7 @@ function QueryFilters({ dateRange, setDateRange }) {
                             id="dateRange"
                             value={dateRange}
                             onChange={(e) => setDateRange(e.target.value)}
-                            className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:text-white"
                         >
                             <option value="today">Today</option>
                             <option value="yesterday">Yesterday</option>
@@ -35,13 +35,13 @@ function QueryFilters({ dateRange, setDateRange }) {
                     <div className="flex items-center justify-start gap-2 md:block md:gap-0">
                         <label
                             htmlFor="queryType"
-                            className="mb-1 block text-sm font-medium text-gray-700"
+                            className="mb-1 block text-sm font-medium text-gray-700 dark:text-white"
                         >
                             Query Type
                         </label>
                         <select
                             id="queryType"
-                            className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:text-white"
                         >
                             <option value="all">All Queries</option>
                             <option value="select">SELECT</option>
@@ -51,7 +51,10 @@ function QueryFilters({ dateRange, setDateRange }) {
                         </select>
                     </div>
                     <div className="md:self-end">
-                        <Button variant="outline">
+                        <Button
+                            variant="outline"
+                            className="dark:bg-gray-900 dark:text-white"
+                        >
                             <FilterIcon size={16} className="mr-1" />
                             MoreFilters
                         </Button>

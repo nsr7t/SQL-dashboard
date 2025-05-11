@@ -19,3 +19,5 @@ html, body, #root {
     margin: 0;
     overflow: hidden;
 }
+
+/* @custom-variant dark (&:where(.dark, .dark *)); */

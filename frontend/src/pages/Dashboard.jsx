@@ -9,32 +9,33 @@ import Pagination from "../components/ui/Pagination"
 function Dashboard() {
     const [timeFrame, setTimeFrame] = useState("7")
     const [dateRange, setDateRange] = useState("last7days")
+
     return (
         <div className="space-y-6 p-6">
             <div>
-                <h1 className="text-2xl font-black text-gray-800">
+                <h1 className="text-2xl font-black text-gray-800 dark:text-white">
                     Dashboard Overview
                 </h1>
-                <p className="mb-2 text-gray-600">
+                <p className="mb-2 text-gray-600 dark:text-gray-400">
                     Welcome Back! Here's what's happening with your database
                     today.
                 </p>
             </div>
+
             <DashboardCard />
+
             <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
-                <div className="rounded-lg bg-white p-6 shadow lg:col-span-2">
+                <div className="rounded-lg bg-white p-6 shadow lg:col-span-2 dark:bg-gray-900 dark:shadow-md">
                     <div className="mb-6 flex items-center justify-between">
-                        <h2 className="text-lg font-semibold text-gray-700">
+                        <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-200">
                             Query Trends
                         </h2>
                         <select
-                            className="rounded-md border border-blue-300 px-3 py-1.5 text-sm"
+                            className="rounded-md border border-blue-300 px-3 py-1.5 text-sm dark:border-blue-500 dark:bg-gray-800 dark:text-white"
                             onChange={(e) => setTimeFrame(e.target.value)}
                         >
                             <option value="7">Last 7 days</option>
-
                             <option value="30">Last 30 days</option>
-
                             <option value="90">Last 90 days</option>
                         </select>
                     </div>
@@ -43,8 +44,9 @@ function Dashboard() {
                         <QueryChart timeFrame={timeFrame} />
                     </div>
                 </div>
-                <div className="rounded-lg bg-white p-6 shadow">
-                    <h2 className="mb-6 text-lg font-semibold text-gray-800">
+
+                <div className="rounded-lg bg-white p-6 shadow dark:bg-gray-900 dark:shadow-md">
+                    <h2 className="mb-6 text-lg font-semibold text-gray-800 dark:text-white">
                         Performance Breakdown
                     </h2>
                     <div className="space-y-4">
@@ -71,9 +73,10 @@ function Dashboard() {
                     </div>
                 </div>
             </div>
-            <div className="rounded-lg bg-white shadow">
-                <div className="border-b border-gray-200 p-6">
-                    <h2 className="text-lg font-semibold text-gray-800">
+
+            <div className="rounded-lg bg-white shadow dark:bg-gray-900 dark:shadow-md">
+                <div className="border-b border-gray-200 p-6 dark:border-gray-700">
+                    <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
                         Recent Queries
                     </h2>
                 </div>

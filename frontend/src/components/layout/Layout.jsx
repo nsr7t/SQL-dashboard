@@ -16,7 +16,7 @@ function Layout({ children }) {
                 <Header setIsOpen={setIsOpen} isOpen={isOpen} />
 
                 {/* Page content below header */}
-                <main className="flex-1 overflow-auto bg-gray-50 p-4">
+                <main className="flex-1 overflow-auto bg-gray-50 p-4 dark:bg-gray-950">
                     {children}
                 </main>
             </div>
