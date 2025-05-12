@@ -1,6 +1,8 @@
 import { SettingsIcon } from "lucide-react"
+import { useTheme } from "../hooks/useTheme"
 
 function SettingsPage() {
+    const [theme, setTheme] = useTheme()
     return (
         <div className="space-y-6">
             <div className="flex items-center space-x-3">
@@ -30,12 +32,14 @@ function SettingsPage() {
                             Theme
                         </label>
                         <select
+                            onChange={(e) => setTheme(e.target.value)}
+                            value={theme}
                             id="dark-mode"
                             className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 pr-10 pl-3 text-gray-900 focus:border-blue-500 focus:ring-blue-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
                         >
-                            <option value="">Light</option>
-                            <option value="">Dark</option>
-                            <option value="">System</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                            <option value="system">System</option>
                         </select>
                     </div>
 
