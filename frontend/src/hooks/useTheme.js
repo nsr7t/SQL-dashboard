@@ -6,20 +6,8 @@ function useTheme() {
             ? localStorage.getItem("theme")
             : "system",
     )
-
     const element = document.documentElement
     const darkQuery = window.matchMedia("(prefer-color-scheme: dark)")
-
-    function onWindowMatch() {
-        if (
-            localStorage.theme === "dark" ||
-            (!("theme" in localStorage) && darkQuery.matches)
-        ) {
-            element.classList.add("dark")
-        } else {
-            element.classList.remove("dark")
-        }
-    }
 
     useEffect(() => {
         if (
@@ -44,9 +32,17 @@ function useTheme() {
                 break
             default:
                 localStorage.removeItem("theme")
-                onWindowMatch()
+
+                if (
+                    localStorage.theme === "dark" ||
+                    (!("theme" in localStorage) && darkQuery.matches)
+                ) {
+                    element.classList.add("dark")
+                } else {
+                    element.classList.remove("dark")
+                }
         }
-    }, [element, onWindowMatch, theme])
+    }, [element, darkQuery.matches, theme])
 
     useEffect(() => {
         const changeHandler = (e) => {
