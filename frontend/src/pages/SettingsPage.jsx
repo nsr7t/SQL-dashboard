@@ -1,4 +1,4 @@
-import { LightbulbIcon, LightbulbOffIcon, SettingsIcon } from "lucide-react"
+import { SettingsIcon } from "lucide-react"
 import { useTheme } from "../hooks/useTheme"
 
 function SettingsPage() {
