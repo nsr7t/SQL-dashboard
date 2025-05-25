@@ -73,7 +73,7 @@ function QueryTable() {
                             <td className="table-data font-medium text-blue-600">
                                 {query.id}
                             </td>
-                            <td className="table-data truncate">
+                            <td className="table-data truncate text-gray-500">
                                 {query.query}
                             </td>
                             <td className="table-data text-gray-500">
