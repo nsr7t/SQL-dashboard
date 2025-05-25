@@ -1,6 +1,7 @@
 {
     "name": "frontend",
     "private": true,
+    "homepage": "https://nsr7t.github.io/SQL-dashboard",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
